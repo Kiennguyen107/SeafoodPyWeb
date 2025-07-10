@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+Bạn đã đăng ký thành công
+<form action="{{ url_for('Inforcus') }}" method="get">
+    <button type="submit">Kiểm tra thông tin của bạn</button>
+</form>
+
+<form action="{{ url_for('go_user_home') }}" method="get">
+    <button type="submit">Trở về màn hình home</button>
+</form>
+
+</body>
+</html>

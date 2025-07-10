@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website!</title>
+    </head>
+    <body>
+        <h1>Điền thông tin của bạn<h1>
+            <form action="{{ url_for('AddNewCusSuccess') }}" method="get">
+                <input type="text" name="name" placeholder="Tên của bạn"><br>
+                <input type="text" name="phone_number" placeholder="Số điện thoại"><br>
+                <input type="text" name="address" placeholder="Địa chỉ"><br>
+                <input type="text" name="created_date" placeholder="Ngày"><br>
+                <button>Confirm</button>
+            </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+<form action="{{ url_for('go_admin_add_new_product_success') }}" method="get">
+    <input type="text" name="product_name" placeholder="Tên sản phầm">
+    <input type="text" name="product_price" placeholder="Giá của sản phẩm">
+    <input type="text" name="product_quantity" placeholder="Số lượng còn lại">
+    <button>Thêm sản phẩm</button>
+</form>
+
+<form action="{{ url_for('go_admin_home') }}" method="get">
+    <button type="submit">Trở về màn hình home</button>
+</form>
+
+</body>
+</html>

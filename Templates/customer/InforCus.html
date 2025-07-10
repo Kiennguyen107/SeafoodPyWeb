@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Seafood shop!</title>
+  </head>
+  <body>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>phone_number</th>
+      <th>address</th>
+
+    </tr>
+    {% for customer in customers %}
+      <tr>
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.phone_number}}</td>
+        <td>{{customer.address}}</td>
+        <td>
+          <form action="{{ url_for('go_customer_details', customer_id=customer.id) }}" method="get">
+          <button type="submit">Xem chi tiết</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <form action="{{ url_for('search_customer_success') }}" method="get">
+              <select name="id">
+                 {% for customer in customers %}
+                   <option value="{{customer.id}}">{{customer.name}} - {{customer.phone_number}}</option>
+                 {% endfor %}
+              </select>
+               <button>Tìm</button>
+</form>
+  <form action="{{ url_for('go_user_home') }}" method="get">
+      <button type="submit">Đi đến mua hàng</button>
+  </form>
+
+  </body>
+</html>

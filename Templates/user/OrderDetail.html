@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+{% if order %}
+<table>
+    <tr>
+        <td>ID của sản phầm</td>
+        <td>{{order.id}}</td>
+    </tr>
+    <tr>
+        <td>Tên sản phầm</td>
+        <td>{{order.name_PD}}</td>
+    </tr>
+    <tr>
+        <td>Giá của sản phẩm</td>
+        <td>{{order.status}}</td>
+    </tr>
+    <tr>
+        <td>Số lượng còn lại</td>
+        <td>{{order.created}}</td>
+    </tr>
+</table>
+
+<form action="{{ url_for('go_user_delete_order', order_id=order.id) }}" method="get">
+    <button type="submit">Xóa sản phẩm này</button>
+</form>
+<form action="{{ url_for('go_user_update_order', order_id=order.id) }}" method="get">
+    <button type="submit">Sửa thông tin sản phẩm</button>
+</form>
+{% endif %}
+
+<form action="{{ url_for('go_user_home') }}" method="get">
+    <button type="submit">Trở về màn hình home</button>
+</form>
+</body>
+</html>

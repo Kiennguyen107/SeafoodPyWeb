@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+{% if product %}
+<table>
+    <tr>
+        <td>ID của sản phầm</td>
+        <td>{{product.id}}</td>
+    </tr>
+    <tr>
+        <td>Tên sản phầm</td>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <td>Giá của sản phẩm</td>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <td>Số lượng còn lại</td>
+        <td>{{product.quantity}}</td>
+    </tr>
+    <tr>
+    </tr>
+</table>
+
+{% endif %}
+
+<form action="{{ url_for('go_user_home') }}" method="get">
+    <button type="submit">Trở về màn hình home</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Id đơn hàng</th>
+      <th>Tên sản phẩm</th>
+      <th>Số lượng còn lại trong kho</th>
+      <th>Giá bán/kg</th>
+    </tr>
+    {% for bill in bills %}
+      <tr>
+        <td>{{bill.order_id}}</td>
+        <td>{{bill.id}}</td>
+        <td>{{bill.quantity}}</td>
+        <td>{{bill.total_money}}</td>
+        <td>
+          <form action="{{ url_for('go_admin_update_bill', bill_id=bill.id) }}" method="get">
+              <button type="submit">Sửa thông tin bill</button>
+          </form>
+          <form action="{{ url_for('go_admin_delete_bill', bill_id=bill.id) }}" method="get">
+              <button type="submit">Xóa bill này</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <form action="{{ url_for('search_bill') }}" method="get">
+  <button type="submit">Tìm hóa đơn</button>
+  </form>
+    <form action="{{ url_for('go_admin_print_bill') }}" method="get">
+    <button type="submit">In Bill</button>
+    </form>
+<form action="{{ url_for('go_admin_home') }}" method="get">
+      <button type="submit">Trở về màn hình home</button>
+</form>
+</body>
+</html>

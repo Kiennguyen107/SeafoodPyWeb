@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+<form action="{{ url_for('go_cus_update_Infor_success', customer_id=customer.id) }}" method="get">
+    <input type="text" name="customer_name" placeholder="Tên sản phầm" value="{{customer.name}}">
+    <input type="text" name="customer_phone_number" placeholder="Giá của sản phẩm" value="{{customer.phone_number}}">
+    <input type="text" name="customer_address" placeholder="Số lượng còn lại" value="{{customer.address}}">
+    <button>Sửa sản phẩm</button>
+</form>
+</body>
+</html>

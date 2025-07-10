@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <form action="{{ url_for('search_bill_success') }}" method="get">
+                <select name="order_id">
+                   {% for bill in bills %}
+                     <option value="{{bill.order_id}}">{{bill.order_id}} - {{bill.id}}</option>
+                   {% endfor %}
+                </select>
+                 <button>Tìm</button>
+  </body>
+</html>

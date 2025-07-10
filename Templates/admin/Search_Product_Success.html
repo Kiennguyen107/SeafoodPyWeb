@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Thông tin mặt hàng</h1>
+     {% for product in products %}
+      Tên sản phẩm : {{product.name}} - {{product.price}} VND
+      <br>Số lượng mua {{product.quantity}}</br>
+     {% endfor %}
+
+    <h1>Thông tin mặt hàng đã bán</h1>
+    {% for bill in bills %}
+    {{bill.id}}
+    {% endfor %}
+    <br>Thông tin đang được tiếp tục cập nhật</br>
+    <form action="{{ url_for('go_admin_home') }}" method="get">
+        <button type="submit">Trở về màn hình home</button>
+    </form>
+  </body>
+</html>

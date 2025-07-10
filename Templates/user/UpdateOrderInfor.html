@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+<form action="{{ url_for('go_user_update_OrderIF_success', order_id=order.id) }}" method="get">
+    <input type="text" name="id" placeholder="Mã sản phầm" value="{{order.id}}">
+    <input type="text" name="name" placeholder="Tên của sản phẩm" value="{{order.name_PD}}">
+    {{order.status}}
+    <button>Sửa sản phẩm</button>
+</form>
+</body>
+</html>

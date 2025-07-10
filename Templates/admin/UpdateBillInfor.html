@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+<form action="{{ url_for('go_admin_update_bill_success', bill_id=bill.id) }}" method="get">
+    <input type="text" name="order_id" placeholder="Mã sản phầm" value="{{bill.order_id}}">
+    <input type="text" name="id" placeholder="Tên của sản phẩm" value="{{bill.id}}">
+    <input type="text" name="quantity" placeholder="Tên của sản phẩm" value="{{bill.quantity}}">
+    <input type="text" name="total_money" placeholder="Tên của sản phẩm" value="{{bill.total_money}}">
+    <button>Sửa sản phẩm</button>
+</form>
+</body>
+</html>

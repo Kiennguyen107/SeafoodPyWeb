@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Seafood shop!</title>
+  </head>
+  <body>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>price</th>
+      <th>quantity</th>
+
+    </tr>
+    {% for product in products %}
+      <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}kg</td>
+        <td>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <form action="{{ url_for('go_user_add_order') }}" method="get">
+      <input type="text" name="id_cus" placeholder="Nhập mã của bạn"><br>
+      <input type="text" name="name_PD" placeholder="Tên mặt hàng"><br>
+      <button>Confirm</button>
+
+  </body>
+</html>

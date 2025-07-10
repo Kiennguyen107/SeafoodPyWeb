@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+Bạn đã đăng ký thành công
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>status</th>
+    <th>created</th>
+
+  </tr>
+  {% for order in orders %}
+    <tr>
+      <td>{{order.id}}</td>
+      <td>{{order.name_PD}}</td>
+      <td>{{order.status}}</td>
+      <td>{{order.created}}</td>
+      <td>
+        <form action="{{ url_for('go_order_details', order_id=order.id) }}" method="get">
+            <button type="submit">Ktra lại thông tin sản phẩm</button>
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+
+<form action="{{ url_for('go_user_home') }}" method="get">
+    <button type="submit">Trở về màn hình home</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+
+In bill thành công
+<table>
+  <tr>
+    <th>Tên sản phẩm</th>
+    <th>Giá bán/kg</th>
+  </tr>
+  {% for bill in bills %}
+    <tr>
+      <td>{{bill.id}}</td>
+
+      <td>{{bill.total_money}}</td>
+    </tr>
+  {% endfor %}
+</table>
+<form action="{{ url_for('go_admin_home') }}" method="get">
+    <button type="submit">Trở về màn hình home</button>
+</form>
+
+</body>
+</html>

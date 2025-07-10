@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Thông tin khách hàng</h1>
+     {% for customer in customers %}
+      Tên : {{customer.name}} - SĐT: {{customer.phone_number}}
+      <br>Địa chỉ : {{customer.address}}</br>
+     {% endfor %}
+
+    <h1>Thông tin mặt hàng khách hàng đã mua</h1>
+    Khách hàng đã mua
+    {% for order in orders %}
+    <br>{{order.id}}: {{order.name_PD}}</br>
+    {% endfor %}
+    <br>Thông tin đang được tiếp tục cập nhật</br>
+    <form action="{{ url_for('go_admin_home') }}" method="get">
+        <button type="submit">Trở về màn hình home</button>
+    </form>
+  </body>
+</html>

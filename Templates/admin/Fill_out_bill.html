@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+</head>
+<body>
+  <h1>Thông tin sản phẩm</h1>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>price</th>
+      <th>quantity</th>
+
+    </tr>
+    {% for product in products %}
+      <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}kg</td>
+        <td>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <h1>Thông tin hàng đã được đặt</h1>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>status</th>
+      <th>created</th>
+    </tr>
+    {% for order in orders %}
+
+      <tr>
+        <td>{{order.id}}</td>
+        <td>{{order.name_PD}}</td>
+        <td>{{order.status}}</td>
+        <td>{{order.created}}</td>
+    {% endfor %}
+  </tr>
+  </table>
+
+<form action="{{ url_for('go_user_bill') }}" method="get">
+    <input type="text" name="order_id" placeholder="Mã đơn hàng">
+    <input type="text" name="id" placeholder="Tên mặt hàng" >
+    <input type="text" name="quantity" placeholder="Số lượng còn lại" >
+    <input type="text" name="total_money" placeholder="Tổng số tiền"><br>
+    <button>Thêm vào Bill</button>
+</form>
+
+<form action="{{ url_for('go_admin_home') }}" method="get"><br>
+    <button type="submit">Trở về màn hình home</button>
+</form>
+
+
+</body>
+</html>
